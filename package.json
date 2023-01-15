@@ -1,0 +1,32 @@
+{
+  "name": "nodejsia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard ",
+    "test": "DEBUG=nodejsia:*  ava test/ --verbose",
+    "coverage":"nyc --reporter=lcov npm run test",
+    "dev": "DEBUG=nodejsia:* nodemon setup.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^5.1.0",
+    "nodemon": "^2.0.20",
+    "nyc": "^15.1.0",
+    "sqlite3": "^5.1.4",
+    "standard": "^17.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "debug": "^4.3.4",
+    "defaults": "^1.0.4",
+    "dotenv": "^16.0.3",
+    "inquirer": "^8.2.5",
+    "pg": "8.7.3",
+    "pg-hstore": "2.3.4",
+    "sequelize": "6.21.4"
+  }
+}
