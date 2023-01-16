@@ -1,6 +1,7 @@
 require("dotenv").config();
 const setupDatabase = require("./lib/db");
 const setupAgentModel = require("./models/agent");
+const setupAgent = require("./lib/agent");
 const setupAgentMetric = require("./models/metric");
 const defaults = require("defaults");
 
@@ -28,7 +29,7 @@ module.exports = async function (config) {
   if (config.setup) {
     await sequelize.sync({ force: true });
   }
-  const Agent = {};
+  const Agent = setupAgent(AgentModel);
   const Metric = {};
   return {
     Agent,
